@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Haystack</title>
+	</head>
+	<body style="width: 20rem; height: 35rem">
+		<div id="loading">Loading...</div>
+
+		<main id="main" style="flex-direction: column; gap: 0.5rem">
+			<input
+				id="title-input"
+				type="text"
+				placeholder="Title"
+				style="padding: 0.5rem"
+			/>
+			<textarea
+				id="desc-input"
+				placeholder="Description"
+				style="padding: 0.5rem"
+			></textarea>
+			<input
+				id="url-input"
+				type="text"
+				placeholder="URL"
+				style="padding: 0.5rem"
+			/>
+			<input
+				id="image-url-input"
+				type="text"
+				placeholder="Image URL"
+				style="padding: 0.5rem"
+			/>
+			<input
+				id="rating-input"
+				type="number"
+				placeholder="Rating"
+				style="padding: 0.5rem"
+				value="1"
+			/>
+			<input
+				id="published-at-input"
+				type="datetime-local"
+				placeholder="Published date"
+				style="padding: 0.5rem"
+			/>
+
+			<button type="submit" id="submit-btn">Submit</button>
+		</main>
+
+		<script src="popup.ts" type="module"></script>
+	</body>
+</html>
