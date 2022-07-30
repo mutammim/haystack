@@ -1,0 +1,20 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./haystack.db"
+}
+
+model Item {
+  id            Int       @id @default(autoincrement())
+  title         String
+  desc          String?
+  url           String
+  imageUrl      String?
+  rating        Int
+  datePublished DateTime?
+  dateLatest    DateTime?
+  addedAt       DateTime  @default(now())
+}
