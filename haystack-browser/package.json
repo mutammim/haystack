@@ -1,14 +1,42 @@
 {
 	"name": "haystack-browser",
+	"displayName": "Haystack",
 	"version": "1.0.0",
+	"description": "Haystack.",
+	"author": "mutammim",
+	"packageManager": "npm@8.11.0",
 	"scripts": {
-		"dev": "parcel watch src/manifest.json --host localhost --config @parcel/config-webextension",
-		"build": "parcel build src/manifest.json --config @parcel/config-webextension"
+		"dev": "plasmo dev",
+		"build": "plasmo build",
+		"format": "prettier . --write"
+	},
+	"dependencies": {
+		"@mozilla/readability": "^0.4.2",
+		"date-fns": "^2.29.1",
+		"html-dom-parser": "^3.0.1",
+		"plasmo": "0.50.1",
+		"react": "18.2.0",
+		"react-dom": "18.2.0"
 	},
 	"devDependencies": {
-		"@parcel/config-webextension": "^2.6.2",
-		"@types/chrome": "^0.0.193",
-		"parcel": "^2.6.2",
-		"prettier": "^2.7.1"
+		"@plasmohq/prettier-plugin-sort-imports": "1.1.1",
+		"@tailwindcss/forms": "^0.5.2",
+		"@types/chrome": "0.0.193",
+		"@types/node": "18.0.3",
+		"@types/react": "18.0.15",
+		"@types/react-dom": "18.0.6",
+		"postcss": "^8.4.16",
+		"prettier": "2.7.1",
+		"tailwindcss": "^3.1.8",
+		"typescript": "4.7.4"
+	},
+	"manifest": {
+		"host_permissions": [
+			"<all_urls>"
+		],
+		"permissions": [
+			"activeTab",
+			"scripting"
+		]
 	}
 }

@@ -1,6 +1,15 @@
-export function processDocument() {
-	// TODO: Get ld-json content
+import { parseISO } from "date-fns";
 
+interface ProcessedResult {
+	title: string | null;
+	desc: string | null;
+	url: string | null;
+	imageUrl: string | null;
+	datePublished: string | null;
+	dateLatest: string | null;
+}
+
+export function processDocument(document: Document): ProcessedResult {
 	/* -------------------------------- Get title ------------------------------- */
 
 	let ogTitle = (
@@ -62,15 +71,33 @@ export function processDocument() {
 
 	/* --------------------------- Get published date --------------------------- */
 
-	// TODO: Get published date
+	let ogDatePublished = (
+		document.querySelector(
+			"meta[property='article:published_time']"
+		) as HTMLMetaElement
+	)?.content;
 
-	let datePublished = null;
+	ogDatePublished
+		? (ogDatePublished = parseISO(ogDatePublished)
+				.toISOString()
+				.slice(0, -5))
+		: null;
+
+	let datePublished: string | null = ogDatePublished || null;
 
 	/* ----------------------------- Get latest date ---------------------------- */
 
-	// TODO: Get latest date
+	let ogDateModified = (
+		document.querySelector(
+			"meta[property='article:modified_time']"
+		) as HTMLMetaElement
+	)?.content;
 
-	let dateLatest = null;
+	ogDateModified
+		? (ogDateModified = parseISO(ogDateModified).toISOString().slice(0, -5))
+		: null;
+
+	let dateLatest: string | null = ogDateModified || ogDatePublished || null;
 
 	/* ------------------------------- Return data ------------------------------ */
 
