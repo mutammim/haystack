@@ -1,6 +1,6 @@
 # Haystack
 
-![Screenshot of Haystack browser.](https://www.mutammim.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhaystack.9280fe20.png&w=3840&q=75)
+![Screenshot of haystack-browser.](https://www.mutammim.com/haystack.png)
 
 Haystack is an app for storing links to content such as articles and videos. While many apps like this exist, I'm hoping to make one that works right for me.
 
